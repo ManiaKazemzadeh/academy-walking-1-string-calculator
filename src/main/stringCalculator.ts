@@ -6,8 +6,8 @@ export class StringCalculator {
             return parseInt(inputNumbers[0]) + parseInt(inputNumbers[1])
         }
 
-        if (input === "4") {
-            return 4;
+        if (input !== "") {
+            return parseInt(input);
         }
         return 0;
     }
