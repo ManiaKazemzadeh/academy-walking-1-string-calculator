@@ -7,6 +7,7 @@ describe('A StringCalculator Add function', () => {
     input   | expectedOutput
     ${""}   | ${0}
     ${"4"}  | ${4}
+    ${"5"}  | ${5}
     ${"2,3"}| ${5}
     ${"1,5"}| ${6}
     `("should return $expectedOutput if it receives $input", ({input, expectedOutput}) => {

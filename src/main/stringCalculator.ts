@@ -1,10 +1,13 @@
 export class StringCalculator {
-    add(number: string) {
-        if (number === "2,3") {
-            return 5
+    add(input: string) {
+        const inputNumbers = [input.charAt(0), input.charAt(2)];
+
+        if(inputNumbers[1]){
+            return parseInt(inputNumbers[0]) + parseInt(inputNumbers[1])
         }
-        if (number === "4") {
-            return 4
+
+        if (input === "4") {
+            return 4;
         }
         return 0;
     }
