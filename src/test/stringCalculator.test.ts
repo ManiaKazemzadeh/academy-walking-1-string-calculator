@@ -15,6 +15,7 @@ describe('A StringCalculator Add function', () => {
     ${"10,3"}            | ${13}
     ${"10,5,5,1"}        | ${21}
     ${"10,10,5\n5,1\n3"} | ${34}
+    ${"//;\n20;20;10;5"} | ${55}
     `("should return $expectedOutput if it receives $input", ({input, expectedOutput}) => {
         expect(calculator.add(input)).toEqual(expectedOutput);
     })
