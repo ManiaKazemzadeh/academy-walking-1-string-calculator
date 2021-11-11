@@ -16,7 +16,7 @@ export class StringCalculator {
         }
 
         const negatives = cleanedInput.filter(num => parseInt(num) < 0)
-        if (negatives){
+        if (negatives.length){
             throw new Error(`negatives not allowed ${negatives}`)
         }
 
