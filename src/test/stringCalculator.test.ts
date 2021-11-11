@@ -10,7 +10,8 @@ describe('A StringCalculator Add function', () => {
     ${"5"}    | ${5}
     ${"2,3"}  | ${5}
     ${"1,5"}  | ${6}
-    ${"1,2,3"}| ${6}
+    ${"10,11"}| ${21}
+    ${"3,5,9"}| ${17}
     `("should return $expectedOutput if it receives $input", ({input, expectedOutput}) => {
         expect(calculator.add(input)).toEqual(expectedOutput);
     })

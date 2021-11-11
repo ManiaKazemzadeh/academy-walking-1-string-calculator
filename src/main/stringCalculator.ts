@@ -1,6 +1,6 @@
 export class StringCalculator {
     add(input: string) {
-        const inputNumbers = [input.charAt(0), input.charAt(2)];
+        const inputNumbers = input.split(",");
 
         if(inputNumbers[1]){
             return parseInt(inputNumbers[0]) + parseInt(inputNumbers[1])
