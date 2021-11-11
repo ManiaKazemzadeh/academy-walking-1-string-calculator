@@ -20,3 +20,9 @@ describe('A StringCalculator Add function', () => {
         expect(calculator.add(input)).toEqual(expectedOutput);
     })
 })
+
+describe('If a StringCalculator Add function receives negative numbers', () => {
+    it("should throw an exception and show all of them in the exception message", () => {
+        expect(calculator.add("1,-2,-3")).toThrowError("-2,-3");
+    })
+})
