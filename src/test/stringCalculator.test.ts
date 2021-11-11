@@ -10,4 +10,9 @@ describe('A StringCalculator Add function', () => {
        let calculator: StringCalculator = new StringCalculator();
        expect(calculator.add("4")).toEqual(4);
     });
+
+  it("should return the sum if it receives a pair of comma separated values", () => {
+    let calculator: StringCalculator = new StringCalculator();
+    expect(calculator.add("2,3")).toEqual(5);
+  });
 })
