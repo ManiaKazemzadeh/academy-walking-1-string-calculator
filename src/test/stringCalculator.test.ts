@@ -1,18 +1,15 @@
 import {StringCalculator} from "../main/stringCalculator";
 
+let calculator: StringCalculator = new StringCalculator();
+
 describe('A StringCalculator Add function', () => {
-    it("should return 0 if it receives an empty string", () => {
-        let calculator: StringCalculator = new StringCalculator();
-        expect(calculator.add("")).toEqual(0);
+    it.each`
+    input   | expectedOutput
+    ${""}   | ${0}
+    ${"4"}  | ${4}
+    ${"2,3"}| ${5}
+    ${"1,5"}| ${6}
+    `("should return $expectedOutput if it receives $input", ({input, expectedOutput}) => {
+        expect(calculator.add(input)).toEqual(expectedOutput);
     })
-
-    it("should return the number if it receives a single number", () => {
-       let calculator: StringCalculator = new StringCalculator();
-       expect(calculator.add("4")).toEqual(4);
-    });
-
-  it("should return the sum if it receives a pair of comma separated values", () => {
-    let calculator: StringCalculator = new StringCalculator();
-    expect(calculator.add("2,3")).toEqual(5);
-  });
 })
