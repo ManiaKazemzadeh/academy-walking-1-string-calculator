@@ -15,6 +15,11 @@ export class StringCalculator {
             cleanedInput = inputNumbers.split(",");
         }
 
+        const negatives = cleanedInput.filter(num => parseInt(num) < 0)
+        if (negatives.length){
+            throw new Error(`negatives not allowed ${negatives}`)
+        }
+
         return cleanedInput.reduce((total, num) => parseInt(num) + total, 0)
     }
 }

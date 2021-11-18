@@ -18,11 +18,11 @@ describe('A StringCalculator Add function', () => {
     ${"//;\n20;20;10;5"} | ${55}
     `("should return $expectedOutput if it receives $input", ({input, expectedOutput}) => {
         expect(calculator.add(input)).toEqual(expectedOutput);
-    })
-})
+    });
 
-// describe('If a StringCalculator Add function receives negative numbers', () => {
-//     it("should throw an exception and show all of them in the exception message", () => {
-//         expect(calculator.add("1,-2,-3")).toThrowError("-2,-3");
-//     })
-// })
+    describe('If a StringCalculator Add function receives negative numbers', () => {
+        it("should throw an exception and show all of them in the exception message", () => {
+            expect(() => calculator.add("1,-2,-3")).toThrowError("negatives not allowed -2,-3");
+        })
+    });
+})
